@@ -20,6 +20,7 @@ limitations under the License.
 <link rel="import" href="css/px-simple-horizontal-bar-chart-styles.html"/>
 <script type="text/javascript" src="../es6-promise/es6-promise.min.js"></script>
 <script type="text/javascript" src="../d3/d3.js"></script>
+<script type="text/javascript" src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <!--
 
 ### Usage
@@ -493,8 +494,15 @@ The following theme would be incorrect because it has a gap. All series in your 
       };
     },
 
-    _drawBar: function(x, y, width, height, i, color) {
-      this.svg.append("rect").attr("class", "bar").attr("x", x).attr("y", y).attr("width", width).attr("height", height).attr("fill", i);
+    _drawBar: function(x, y, width, height, i, value,label) {
+      var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-30, 0])
+      .html(function(d) {
+        return "<span style='color:#EEFBFF;background:#003d66;border-width:30px;border-style: solid;border-color:#003d66;'>" + label + " - " + value + "</span>";
+      })
+      this.svg.append("rect").attr("class", "bar").attr("x", x).attr("y", y).attr("width", width).attr("height", height).attr("fill", i).call(tip).on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
     },
 
     _calculateLabelCenterOffset: function(rectObject) {
@@ -555,6 +563,7 @@ The following theme would be incorrect because it has a gap. All series in your 
         y,
         x,
         color;
+
       var sum = this._sum(this.chartData);
       var drawBars = this._isThereEnoughSpaceForBarLabels();
       // choose the correct percentage calculation function to be used on each label
@@ -574,7 +583,8 @@ The following theme would be incorrect because it has a gap. All series in your 
         x = 0;
         y = i * (this.barHeight + this._barPadding);
         color = this._getColor(i);
-        this._drawBar(x, y, barWidth, this.barHeight, color);
+        var label = this.legendLabels[i];
+        this._drawBar(x, y, barWidth, this.barHeight, color,value,label);
         if (drawBars) {
           this._drawBarLabel(x, y, textLabel);
         }
