@@ -29,14 +29,14 @@ limitations under the License.
 
 <!-- Imports for this component -->
 
-<link rel="import" href="../px-simple-horizontal-bar-chart.html" />
+<link rel="import" href="../og-simple-horizontal-bar-chart.html" />
 
 <!-- Demo DOM module -->
-<dom-module id="px-simple-horizontal-bar-chart-demo">
+<dom-module id="og-simple-horizontal-bar-chart-demo">
   <template>
     <!-- Header -->
     <px-demo-header
-      module-name="px-simple-horizontal-bar-chart"
+      module-name="og-simple-horizontal-bar-chart"
       description="The Simple Horizontal Bar Chart provides a quick way to visualize data in bars.
       Each series is represented by a sequence of verically aligned bars, the length of
       each proportionally representing a value.
@@ -59,26 +59,26 @@ limitations under the License.
 
       <!-- Component ---------------------------------------------------------->
       <px-demo-component slot="px-demo-component">
-        <px-simple-horizontal-bar-chart
+        <og-simple-horizontal-bar-chart
           chart-data="{{props.chartData.value}}"
           width="{{props.width.value}}"
           height="{{props.height.value}}"
           bar-labels="{{props.barLabels.value}}"
           legend-labels="{{props.legendLabels.value}}">
-        </px-simple-horizontal-bar-chart>
+        </og-simple-horizontal-bar-chart>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
 
       <px-demo-component-snippet
         slot="px-demo-component-snippet"
         element-properties="{{props}}"
-        element-name="px-simple-horizontal-bar-chart"
+        element-name="og-simple-horizontal-bar-chart"
         scripts-includes="[[scriptsIncludes]]">
       </px-demo-component-snippet>
     </px-demo-interactive>
 
     <!-- API Viewer -->
-    <px-demo-api-viewer source="px-simple-horizontal-bar-chart"></px-demo-api-viewer>
+    <px-demo-api-viewer source="og-simple-horizontal-bar-chart"></px-demo-api-viewer>
 
     <!-- Footer -->
     <px-demo-footer></px-demo-footer>
@@ -88,7 +88,7 @@ limitations under the License.
 </dom-module>
 <script>
   Polymer({
-    is: 'px-simple-horizontal-bar-chart-demo',
+    is: 'og-simple-horizontal-bar-chart-demo',
 
     properties: {
 

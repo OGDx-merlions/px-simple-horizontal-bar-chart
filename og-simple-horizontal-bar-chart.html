@@ -17,10 +17,11 @@ limitations under the License.
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="../px-simple-chart-common-behavior/px-simple-chart-common-behavior.html"/>
 <link rel="import" href="../px-simple-chart-common-behavior/px-simple-chart-common-behavior-colors.html" />
-<link rel="import" href="css/px-simple-horizontal-bar-chart-styles.html"/>
+<link rel="import" href="css/og-simple-horizontal-bar-chart-styles.html"/>
 <script type="text/javascript" src="../es6-promise/es6-promise.min.js"></script>
 <script type="text/javascript" src="../d3/d3.js"></script>
-<script type="text/javascript" src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<!-- <script type="text/javascript" src="../d3-tip/index.js"></script> -->
 <!--
 
 ### Usage
@@ -83,18 +84,18 @@ The following theme would be incorrect because it has a gap. All series in your 
 @homepage index.html
 @demo index.html
 -->
-<dom-module id="px-simple-horizontal-bar-chart">
+<dom-module id="og-simple-horizontal-bar-chart">
   <template>
-    <style include="px-simple-horizontal-bar-chart-styles"></style>
+    <style include="og-simple-horizontal-bar-chart-styles"></style>
 
-    <svg class="px-simple-horizontal-bar-chart-svg"></svg>
+    <svg class="og-simple-horizontal-bar-chart-svg"></svg>
   </template>
 </dom-module>
 <script>
 
   Polymer({
 
-    is: 'px-simple-horizontal-bar-chart',
+    is: 'og-simple-horizontal-bar-chart',
 
     behaviors: [
       PxSimpleChartCommonBehavior.common,

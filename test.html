@@ -26,7 +26,7 @@ limitations under the License.
         <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
         <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
         <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
-        <link rel="import" href="px-simple-horizontal-bar-chart.html"/>
+        <link rel="import" href="og-simple-horizontal-bar-chart.html"/>
         <style>
             #container {
                 height: 350px;
@@ -38,7 +38,7 @@ limitations under the License.
 
         <template id="just-for-demo" is="dom-bind">
             <div id="container">
-                <px-simple-horizontal-bar-chart
+                <og-simple-horizontal-bar-chart
                     id="default-chart"
                     width="auto"
                     height="auto"
@@ -50,7 +50,7 @@ limitations under the License.
                         "Unplanned Maintenance", "Ops Changes", "Forced Outage", "eight"
                     ]'>
                     &hearts;
-                </px-simple-horizontal-bar-chart>
+                </og-simple-horizontal-bar-chart>
             </div>
         </template>
 
